@@ -35,7 +35,7 @@ export function StoryShell({
   const worthDisplay = useCountTo(grossSaved, fmtINR)
 
   return (
-    <div className="storyboard">
+    <div className="storyboard" data-act={act}>
       <aside className="sb-sidebar">
         <div className="sb-scores">
           <div
@@ -83,7 +83,7 @@ export function StoryShell({
           </nav>
         </div>
 
-        {(canBack || act !== 1) && (
+        {act < 4 && (canBack || act !== 1) && (
           <div className="sb-sidebar-nav">
             {canBack && (
               <button
